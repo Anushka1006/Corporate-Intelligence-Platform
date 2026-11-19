@@ -1,0 +1,269 @@
+{
+  "ultratechcement": {
+    "company": "UltraTech Cement Ltd.",
+    "model": "openai/gpt-oss-20b",
+    "parameters": {
+      "Current Technology Adoption": {
+        "summary": "Scaled AI, machine learning, IoT and advanced analytics across factories to enhance process stability, energy efficiency and asset reliability, including predictive‑maintenance platforms that use IoT sensors and AI models to reduce unplanned downtime. Advanced process control systems and AI‑driven optimisation were deployed on kilns and mills, supported by connected‑worker, robotics and computer‑vision technologies. Cloud‑based data services and the SAP S/4HANA RISE programme were initiated to improve scalability and system resilience.",
+        "pages": [
+          "117",
+          "119",
+          "120",
+          "129"
+        ]
+      },
+      "Digital Transformation": {
+        "summary": "SAP S/4HANA upgrade and RISE programme transition core ERP to cloud. Speed 2.0 platform optimises order allocation based on delivery cost and OTIF. RMC Control Tower provides real‑time scheduling, tracking and mobile collaboration across plants. Invoice‑to‑Payment revamp streamlines high‑volume transactions. UltraBuddy, a WhatsApp‑based GenAI assistant, offers 24×7 dealer support.",
+        "pages": [
+          "119",
+          "129"
+        ]
+      },
+      "R&D": {
+        "summary": "In‑house R&D FY 2025‑26: ₹4.07 cr capital, ₹15.38 cr recurring, total ₹19.45 cr. Scientific research contribution: ₹7.50 cr. Total R&D FY 2025‑26: ₹26.95 cr (0.03 % of turnover). FY 2024‑25 R&D: ₹29.14 cr (0.04 % of turnover). R&D priorities: lower environmental footprint, improve operational efficiency, develop next‑generation materials.",
+        "pages": [
+          "63",
+          "84",
+          "128",
+          "142"
+        ]
+      },
+      "Emerging Technologies": {
+        "summary": "Scaled AI‑driven predictive maintenance combining IoT sensor data with machine‑learning models. Thousands of IoT sensors deployed on mechanical, electrical and safety equipment. Robotics and computer‑vision systems automate inspection and enhance safety. Industry 4.0 application reduces human exposure in high‑risk activities. Planned rollout of drones and advanced sensor‑based technologies for resilience and sustainability reporting.",
+        "pages": [
+          "62",
+          "86",
+          "119",
+          "120",
+          "184"
+        ]
+      },
+      "Technology Partnerships": {
+        "summary": "SAP ERP deployment consolidates material master codes and audit readiness. Collaboration with GCCA Innovandi network on low‑carbon cement and operational efficiency. Third‑party agencies strengthen ESG assessment, supplier screening and digital procurement analytics. VendX digital procurement platform automates sourcing workflow with audit trails and cost optimisation.",
+        "pages": [
+          "65",
+          "88",
+          "128"
+        ]
+      },
+      "Technology Investments": {
+        "summary": "Intangible assets under development: Rs 28.41 cr (1 Apr 2024), Rs 61.62 cr added FY 2024‑25, Rs 45.92 cr (31 Mar 2025), Rs 466.40 cr (31 Mar 2026). Additions on acquisition/scheme of arrangement: Rs 211.54 cr added to capital work‑in‑progress, potentially including technology acquisitions.",
+        "pages": [
+          "119",
+          "273"
+        ]
+      },
+      "Cloud Adoption": {
+        "summary": "SAP S/4HANA RISE programme migrates core ERP to cloud, improving scalability and resilience. Robust Data Warehouse and Data Lake underpin AI, ML, GenAI, IoT and analytics. Data Security Posture Management services and CrowdStrike Spotlight enhance cloud security. No monetary investment or workload share disclosed.",
+        "pages": [
+          "118",
+          "119"
+        ]
+      },
+      "Automation": {
+        "summary": "Robotics, drones and advanced sensor‑based technologies boost operational resilience, safety and sustainability. Online workflow for credit‑exception approvals reduces paperwork. AI‑driven predictive maintenance and advanced process control improve uptime and process efficiency.",
+        "pages": [
+          "72",
+          "88",
+          "119",
+          "120"
+        ]
+      },
+      "Cybersecurity": {
+        "summary": "Framework includes real‑time intrusion alerts, decoy technologies, backups and continuous monitoring. OT security reinforced via patch‑management, intrusion‑detection, antivirus and backups. IT‑OT micro‑segmentation completed across additional plants; secure remote access standardised for 23 units. Cybersecurity Steering Committee and Board oversight govern risk management.",
+        "pages": [
+          "118"
+        ]
+      },
+      "Future Technology Roadmaps": {
+        "summary": "Near‑term roadmap scales Agentic AI, robotics and advanced analytics globally. SAP S/4HANA RISE programme transitions core IT to cloud. RMC Control Tower pilots dynamic scheduling and real‑time visibility. DataPulse, an in‑house GenAI BI platform, delivers real‑time natural‑language insights. Planned scaling of AI and Agentic automation across all functions.",
+        "pages": [
+          "119",
+          "120"
+        ]
+      },
+      "Technology Pain Areas": {
+        "summary": "Shortage of skilled manpower and limited leadership talent in contractor ecosystem causes instability. Sub‑optimal digital and AI adoption due to capability gaps and lack of responsible‑AI governance. Rapidly evolving cyber‑threats and generative‑AI data‑exposure risks threaten security. Integration between enterprise IT and OT networks requires strengthening, leading to IT‑OT micro‑segmentation and standardised remote access.",
+        "pages": [
+          "88",
+          "119",
+          "132",
+          "133"
+        ]
+      },
+      "AI": {
+        "summary": "Scaled AI and ML models for predictive maintenance using IoT sensor data to improve uptime. AI‑driven optimisation on kilns and mills boosts process efficiency and fuel utilisation. Computer‑vision and robotics enhance inspection accuracy and worker safety. Proprietary GenAI engine expands predictive‑maintenance platform. Continued investment in in‑house and OEM platforms for fleet management and robotics.",
+        "pages": [
+          "116",
+          "119"
+        ]
+      },
+      "Tech Risk": {
+        "summary": "Cyber‑risk management emphasizes proactive prevention, early detection and rapid response with advanced vulnerability‑assessment tools and auto‑remediation. CrowdStrike Spotlight enhances endpoint visibility. DSPM services continuously identify and mitigate cloud risks. Application‑level microsegmentation restricts lateral movement. Controls limit use of public Generative AI platforms to reduce data exposure.",
+        "pages": [
+          "65",
+          "118"
+        ]
+      },
+      "Platforms & Systems": {
+        "summary": "MineOptima360 integrates mining value chain, delivering measurable productivity improvements and scaling across units. Centralised Mines Analytics Dashboard tracks operational and cost indicators. SAP S/4HANA RISE programme transitions core ERP to cloud. RMC Control Tower enables dynamic scheduling and real‑time visibility. Data Warehouse and Data Lake support AI, ML, GenAI, IoT and analytics.",
+        "pages": [
+          "72",
+          "82",
+          "88",
+          "119",
+          "120"
+        ]
+      },
+      "Talent & Skills": {
+        "summary": "Delivered 9,503,388 training hours, averaging Rs 4,840 per employee. Offered 11,158 distinct programmes covering leadership, technical, safety and digital tools. Upgraded skills for over 17,000 employees. Learning ecosystem structured around Fit to Work, Fit to Perform and Fit to Grow pillars.",
+        "pages": [
+          "30",
+          "90",
+          "95",
+          "130"
+        ]
+      }
+    },
+    "source_fingerprint": "d7bb935d13ea10e512869948892bec67c09486696cf27476d57d761e39d2e14f"
+  },
+  "adanipower": {
+    "company": "Adani Power Ltd.",
+    "model": "openai/gpt-oss-20b",
+    "parameters": {
+      "Current Technology Adoption": {
+        "summary": "Enterprise Data Lake (EDL) is a cloud‑enabled centralised platform integrating operational and corporate data for advanced analytics and AI/ML; real‑time monitoring and AI diagnostics optimise fleet performance; Project Beacon digitises merit‑order optimisation and coal‑management; AI tools improve combustion, clinker detection, coal quality; Asset Performance Monitoring tracks critical plant assets.",
+        "pages": [
+          "26",
+          "32",
+          "166"
+        ]
+      },
+      "Digital Transformation": {
+        "summary": "EDL unifies data integration and AI/ML across operations; Project Beacon enhances plant efficiency via analytics; AI tools for combustion, clinker detection, coal quality drive predictive operations; Asset Performance Monitoring with RFID‑enabled safety solutions provides real‑time health visibility; Inno Power platform captures and implements employee innovation.",
+        "pages": [
+          "32",
+          "77",
+          "166"
+        ]
+      },
+      "R&D": {
+        "summary": "Targeted R&D in epidemiology and hydrogeology spent Rs 2.2 crore capital and Rs 1.9 crore recurring; Rs 165 crore CAPEX allocated for energy improvement projects; FY 2025‑26 R&D expenditure was NIL; digitalisation‑led modernisation supported real‑time monitoring, predictive maintenance and energy savings; ammonia co‑firing and green hydrogen pilots with research partners explored alternative energy.",
+        "pages": [
+          "47",
+          "77",
+          "147",
+          "166",
+          "201",
+          "208"
+        ]
+      },
+      "Emerging Technologies": {
+        "summary": "Project Beacon, AI combustion optimisation, clinker detection, coal‑quality analytics, and APM with RFID real‑time monitoring represent IoT adoption; programmable lubrication systems provide precise dosing; Inno Power platform captures innovative ideas; all support predictive maintenance and performance enhancement.",
+        "pages": [
+          "32",
+          "77",
+          "166",
+          "201"
+        ]
+      },
+      "Technology Partnerships": {
+        "summary": "AI/ML predictive analytics and adaptive security controls enhance cyber‑resilience; SAP Ariba portal supports vendor onboarding and procurement governance; M1 Exchange and RXIL fintech platforms enable supplier financing and invoice discounting; consolidated O&M partner shifts to end‑to‑end service; research collaborations on ammonia co‑firing and green hydrogen pilots.",
+        "pages": [
+          "53",
+          "146",
+          "201",
+          "208",
+          "216"
+        ]
+      },
+      "Technology Investments": {
+        "summary": "Rs 165 crore capital invested in energy‑conservation digital initiatives, including advanced analytics and a centralised data platform; Rs 16.26 crore in digital technologies; Rs 10.87 crore for DCS upgrade, CT fills, LED lighting at Butibori; Rs 8 crore for SCADA upgrade, meter procurement, coal‑nozzle replacement at Tuticorin; Rs 5 crore for HP heater and APH basket upgrades.",
+        "pages": [
+          "52",
+          "53",
+          "147",
+          "166"
+        ]
+      },
+      "Cloud Adoption": {
+        "summary": "Rs 52.87 crore allocated to cloud, digital transformation and automation; EDL is a cloud‑enabled platform providing standardized data‑management and supporting descriptive to prescriptive analytics for AI/ML deployment.",
+        "pages": [
+          "32",
+          "37"
+        ]
+      },
+      "Automation": {
+        "summary": "Virtual RPA lab “Power Robo” established as an RPA Centre of Excellence; certified developers rolled out RPA across the organisation; training expanded to additional locations; RPA improved accuracy, reduced manual effort and turnaround; Project DRISHTI uses centralised monitoring for predictive asset maintenance.",
+        "pages": [
+          "33",
+          "79",
+          "166"
+        ]
+      },
+      "Cybersecurity": {
+        "summary": "ISO 27001‑certified IT infrastructure and information security system; 24×7 Cyber Security Operations Centre uses AI‑enabled analytics for real‑time threat detection; AI/ML threat detection enhances proactive risk identification; OT security framework safeguards plant control systems; Experience Centre supports cyber‑range simulations and product testing.",
+        "pages": [
+          "146",
+          "147",
+          "202"
+        ]
+      },
+      "Future Technology Roadmaps": {
+        "summary": "Net Zero roadmap targets carbon neutrality by 2070; centralised Energy Network Operation Center (ENOC) provides real‑time monitoring across states; commitment to AI and data‑driven solutions with awareness programmes; EDL development supports advanced analytics and AI/ML; planned centralised data platform for predictive analytics, ML forecasting, NLP exploration and secure portal access.",
+        "pages": [
+          "26",
+          "32",
+          "52",
+          "89",
+          "122"
+        ]
+      },
+      "Technology Pain Areas": {
+        "summary": "Legacy IT/OT architecture modernised for resilience and scalability; emerging cyber threats drive investment in advanced security technologies and continuous monitoring; cybersecurity skills gap addressed via awareness programmes; integration of disparate data tackled by EDL; data quality and analytics limitations mitigated by standardized data‑management architecture.",
+        "pages": [
+          "32",
+          "111",
+          "122",
+          "146",
+          "160"
+        ]
+      },
+      "AI": {
+        "summary": "Project DRISHTI delivers predictive maintenance with ~97% issue‑closure and 22‑23 day resolution; AI image/video analytics monitor operations in real time; Agentic AI chatbots provide decision support; ENOC uses AI/ML for anomaly detection and predictive maintenance; ML models improve boiler efficiency and heat‑rate performance.",
+        "pages": [
+          "26",
+          "32",
+          "33",
+          "166"
+        ]
+      },
+      "Tech Risk": {
+        "summary": "Information security breach risk mitigated by SOPs, policies, audits and penetration tests; centralised 24×7 Cyber Security Operations Centre monitors and responds to threats using AI analytics; AI/ML adoption strengthens cyber resilience; advanced threat intelligence and incident response manage evolving threats; OT security framework safeguards operational technology.",
+        "pages": [
+          "146",
+          "147",
+          "201"
+        ]
+      },
+      "Platforms & Systems": {
+        "summary": "EDL is a centralised, scalable, cloud‑enabled data platform; Oracle Fusion Digital HR streamlines employee lifecycle; Project Beacon digitises merit‑order optimisation and coal‑management; Inno Power platform captures and implements innovation; Project DRISHTI delivers unified monitoring and analytics‑driven interventions with ~97% resolution.",
+        "pages": [
+          "32",
+          "33",
+          "166",
+          "173"
+        ]
+      },
+      "Talent & Skills": {
+        "summary": "Over 50 employees upskilled in advanced analytics; planned training for 50 more; Analytics Centre of Excellence operates at 12 sites and extends to new M&A or project sites; 61,125 training hours delivered for digital and analytical skills.",
+        "pages": [
+          "52",
+          "115",
+          "147"
+        ]
+      }
+    },
+    "source_fingerprint": "fa4dc60510eafef95fc17cd6226433a144d38618802afd31fac0ac006605ec69"
+  }
+}

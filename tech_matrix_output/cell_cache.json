@@ -1,0 +1,424 @@
+{
+  "ultratechcement": {
+    "company": "UltraTech Cement Ltd.",
+    "model": "openai/gpt-oss-20b",
+    "parameters": {
+      "Current Technology Adoption": {
+        "summary": "Scaled AI, machine learning, IoT and advanced analytics across factories to improve process stability, energy efficiency and asset reliability, including predictive‑maintenance platforms that use IoT sensors and AI models to reduce unplanned downtime. Advanced process control systems and AI‑driven optimisation were deployed on kilns and mills, supported by connected‑worker, robotics and computer‑vision technologies. Cloud‑based data services and the SAP S/4HANA RISE programme were initiated to enhance visibility, scalability and system resilience.",
+        "pages": [
+          "117",
+          "119",
+          "120",
+          "129"
+        ]
+      },
+      "Digital Transformation": {
+        "summary": "SAP S/4HANA upgrade and the RISE programme transition core ERP to cloud, improving scalability. Speed 2.0 optimises order allocation, while the RMC Control Tower provides real‑time scheduling and mobile collaboration across plants. Invoice‑to‑Payment revamp streamlines high‑volume transactions, and UltraBuddy, a WhatsApp‑based GenAI assistant, offers 24×7 dealer support.",
+        "pages": [
+          "119",
+          "129"
+        ]
+      },
+      "R&D": {
+        "summary": "In‑house R&D FY 2025‑26: ₹4.07 cr capital, ₹15.38 cr recurring, total ₹19.45 cr. Scientific research contribution: ₹7.50 cr, bringing total FY 2025‑26 R&D to ₹26.95 cr (0.03 % of turnover). FY 2024‑25 R&D: ₹29.14 cr (0.04 % of turnover). R&D priorities focus on lowering environmental footprint, improving operational efficiency and developing next‑generation construction materials.",
+        "pages": [
+          "63",
+          "84",
+          "128",
+          "142"
+        ]
+      },
+      "Emerging Technologies": {
+        "summary": "AI‑driven predictive maintenance combines IoT sensor data with machine‑learning models to forecast failures and improve uptime. Thousands of IoT sensors capture real‑time operational signals; robotics and computer‑vision automate inspection and enhance safety. A new Industry 4.0 application reduces human exposure in high‑risk activities, and drones with advanced sensors are planned to strengthen resilience and sustainability reporting.",
+        "pages": [
+          "62",
+          "86",
+          "119",
+          "120",
+          "184"
+        ]
+      },
+      "Technology Partnerships": {
+        "summary": "SAP ERP deployment consolidates material codes and audit readiness. Collaboration with GCCA Innovandi network advances low‑carbon cement and operational efficiency R&D. Third‑party agencies support ESG assessment, supplier screening and digital procurement analytics. VendX digital procurement platform automates sourcing workflows, audit trails and cost optimisation.",
+        "pages": [
+          "65",
+          "88",
+          "128"
+        ]
+      },
+      "Technology Investments": {
+        "summary": "Intangible assets under development rose to Rs 28.41 cr as of 1 Apr 2024, with additions of Rs 61.62 cr in FY 2024‑25, reaching Rs 45.92 cr by 31 Mar 2025 and Rs 466.40 cr by 31 Mar 2026. Rs 211.54 cr was added to capital work‑in‑progress from acquisitions or schemes, potentially including technology assets.",
+        "pages": [
+          "119",
+          "273"
+        ]
+      },
+      "Cloud Adoption": {
+        "summary": "SAP S/4HANA RISE migrates core ERP to cloud, improving scalability and resilience. A robust Data Warehouse and Data Lake underpin AI, machine‑learning, GenAI, IoT and advanced analytics. Data Security Posture Management services and CrowdStrike Spotlight enhance cloud security; no monetary cloud spend disclosed.",
+        "pages": [
+          "118",
+          "119"
+        ]
+      },
+      "Automation": {
+        "summary": "Robotics, drones and advanced sensor‑based technologies boost operational resilience, safety and sustainability. Online credit‑exception workflow reduces paperwork and speeds approvals. AI‑driven predictive maintenance and advanced process control systems enhance uptime, efficiency and product consistency.",
+        "pages": [
+          "72",
+          "88",
+          "119",
+          "120"
+        ]
+      },
+      "Cybersecurity": {
+        "summary": "A comprehensive data protection framework uses real‑time intrusion alerts, decoy technologies, backups and continuous monitoring. OT security is reinforced via patch management, intrusion detection and antivirus. IT‑OT micro‑segmentation and secure remote access cover 23 units. Governance is led by a Cybersecurity Steering Committee and Board oversight.",
+        "pages": [
+          "118"
+        ]
+      },
+      "Future Technology Roadmaps": {
+        "summary": "Near‑term roadmap scales Agentic AI, robotics and advanced analytics globally. SAP S/4HANA RISE continues cloud transition. RMC Control Tower pilots dynamic scheduling and real‑time visibility. DataPulse, an in‑house GenAI BI platform, delivers real‑time natural‑language insights. AI and Agentic automation are planned across all functions to improve decision‑making and reduce downtime.",
+        "pages": [
+          "119",
+          "120"
+        ]
+      },
+      "Technology Pain Areas": {
+        "summary": "Skilled manpower shortages and limited leadership talent destabilise operations. Sub‑optimal digital and AI adoption, coupled with absent responsible‑AI governance, dilutes investment returns. Rapid cyber‑threat evolution and generative‑AI data‑exposure risks threaten security. Integration gaps between IT and OT require micro‑segmentation and standardised remote access across 23 units.",
+        "pages": [
+          "88",
+          "119",
+          "132",
+          "133"
+        ]
+      },
+      "AI": {
+        "summary": "AI and machine‑learning models are scaled for predictive maintenance, using IoT data to improve uptime. AI‑driven optimisation on kilns and mills boosts process efficiency and fuel utilisation. Computer‑vision and robotics enhance inspection accuracy and worker safety. Proprietary GenAI engine expands predictive‑maintenance capabilities. Ongoing investment supports fleet management and robotics for asset monitoring.",
+        "pages": [
+          "116",
+          "119"
+        ]
+      },
+      "Tech Risk": {
+        "summary": "Cyber‑risk management emphasizes proactive prevention, early detection and rapid response with advanced vulnerability‑assessment tools and auto‑remediation. CrowdStrike Spotlight improves endpoint visibility. DSPM services continuously identify cloud risks. Application‑level microsegmentation limits lateral threat movement. Controls restrict public Generative AI platform use to mitigate data exposure.",
+        "pages": [
+          "65",
+          "118"
+        ]
+      },
+      "Platforms & Systems": {
+        "summary": "MineOptima360 integrates the mining value chain, delivering real‑time equipment performance and productivity improvements; it is being scaled. The Centralised Mines Analytics Dashboard tracks key operational and cost indicators. SAP S/4HANA RISE transitions core ERP to cloud. RMC Control Tower enables dynamic scheduling and real‑time visibility across plants and site teams. A Data Warehouse and Data Lake foundation supports AI, machine‑learning, GenAI, IoT and advanced analytics.",
+        "pages": [
+          "72",
+          "82",
+          "88",
+          "119",
+          "120"
+        ]
+      },
+      "Talent & Skills": {
+        "summary": "UltraTech delivered 9,50,388 training hours, averaging Rs 4,840 per employee, across 11,158 programmes. Over 17,000 employees received skill‑upgradation, covering leadership, technical, safety and digital tools. The learning ecosystem is structured around Fit to Work, Fit to Perform and Fit to Grow pillars for role‑based curricula.",
+        "pages": [
+          "30",
+          "90",
+          "95",
+          "130"
+        ]
+      }
+    },
+    "source_fingerprint": "d7bb935d13ea10e512869948892bec67c09486696cf27476d57d761e39d2e14f"
+  },
+  "jswsteel": {
+    "company": "JSW Steel Ltd.",
+    "model": "openai/gpt-oss-20b",
+    "parameters": {
+      "Current Technology Adoption": {
+        "summary": "Deployed 20,000+ sensors in the Condition‑based Monitoring Programme, saving 37,000 operational hours; built a private 5G network at Dolvi Works (14 towers, 10 Gbps backbone, ~200 Mbps zonal bandwidth) for IIoT; launched TEJAS Platform and expanded the Enterprise Data Lake; integrated Industry 4.0 via Project SPOORTHI, Project Drishti, and JSW Vision.AI.",
+        "pages": [
+          "23",
+          "48",
+          "49",
+          "51"
+        ]
+      },
+      "Digital Transformation": {
+        "summary": "Implemented Project SPOORTHI for enterprise monitoring and logistics visibility; Project Drishti for AI‑driven visual analytics; JSW Vision.AI for predictive maintenance and digital twins; TEJAS Platform for data‑led decision‑making; Condition‑based Monitoring Programme saved 37,000 unplanned downtime hours.",
+        "pages": [
+          "23",
+          "28",
+          "48",
+          "100",
+          "142"
+        ]
+      },
+      "R&D": {
+        "summary": "Spent Rs 1,142 crore on R&D FY 2025‑26; developed 182 new steel products; filed 40 patents; COE executed 95 SEED projects and initiated formal IP management for high‑potential innovations.",
+        "pages": [
+          "42",
+          "47",
+          "209",
+          "210"
+        ]
+      },
+      "Emerging Technologies": {
+        "summary": "Rolled out 20,000 sensors for IIoT; implemented Digital Twins across production lines; deployed Vision.AI Suite for automated inspection; adopted advanced process control systems; launched Connected Fleet Management for logistics visibility.",
+        "pages": [
+          "49"
+        ]
+      },
+      "Technology Partnerships": {
+        "summary": "Partnered with Integrity Matters for Ethics 24×7 Helpline; collaborated with Tier‑1 institutes, Harvard, Skillsoft, Coursera, and steelUniversity for learning; 50:50 JV with JFE for GOES technology; JFE‑Itochu JV for steel processing; JV with Severfield plc for precision fabrication.",
+        "pages": [
+          "33",
+          "96",
+          "100",
+          "128"
+        ]
+      },
+      "Technology Investments": {
+        "summary": "Added Rs 130 crore in computer software intangible assets FY 2024‑25; Rs 32 crore license‑fee intangible assets FY 2024‑25; Rs 123 crore technical know‑how intangible assets FY 2024‑25; Rs 85 crore computer software intangible assets FY 2025‑26; Rs 16 crore license‑fee intangible assets FY 2025‑26.",
+        "pages": [
+          "23",
+          "247",
+          "306"
+        ]
+      },
+      "Cloud Adoption": {
+        "summary": "Launched an Enterprise Data Lake with domain‑oriented data‑mesh architecture; expanded Data Products Programme for trusted data access; modernised IT with secure backup and disaster‑recovery; earmarked ₹0.37 crore for digitalisation initiatives.",
+        "pages": [
+          "48",
+          "50",
+          "148"
+        ]
+      },
+      "Automation": {
+        "summary": "Expanded business process automation across commercial and operational workflows; adopted digital platforms for order management; deployed IIoT for asset monitoring; implemented Digital Twins for production optimisation; introduced autonomous AGVs and robotics for material handling.",
+        "pages": [
+          "48",
+          "49"
+        ]
+      },
+      "Cybersecurity": {
+        "summary": "Framework aligned with ISO/IEC 27001:2013 and ISO 27001:2022; overseen by CIO and Board’s Risk Management Committee; continuous Information Security Policy updates; comprehensive cyber awareness and training; managed third‑party risk and maintained cyber insurance.",
+        "pages": [
+          "33",
+          "115",
+          "183",
+          "184",
+          "195",
+          "218"
+        ]
+      },
+      "Future Technology Roadmaps": {
+        "summary": "Two‑phase decarbonisation roadmap targeting 1.95 tCO₂/tcs by 2030 and net‑zero by 2050; ₹1.26 lakh crore CAPEX pipeline, ₹22,000‑24,000 crore FY 2026‑27 for 78 MTPA capacity; JV with JFE for green‑steel platform; 1 MTPA electric arc furnace project FY 2028‑29; embedded Industry 4.0 via SPOORTHI, Drishti, Vision.AI.",
+        "pages": [
+          "23",
+          "28",
+          "36",
+          "38",
+          "48"
+        ]
+      },
+      "Technology Pain Areas": {
+        "summary": "Automated Vision.AI Suite reduced manual inspection; AI/ML and advanced process control addressed process variability; Condition‑based Monitoring Programme tackled equipment reliability; AI‑assisted dashboards improved decision‑making; Enterprise Data Lake and TEJAS Platform resolved IT‑OT integration issues.",
+        "pages": [
+          "23",
+          "48",
+          "49",
+          "195",
+          "284"
+        ]
+      },
+      "AI": {
+        "summary": "Applied AI/ML for process optimisation across sinter, pellet, furnace, mill, and utilities; Vision.AI Suite enabled real‑time analytics and safety monitoring; AI‑enabled advanced process control improved energy efficiency; pellet plant AI model achieved 5% energy savings; predictive maintenance saved 37,000 operational hours.",
+        "pages": [
+          "10",
+          "28",
+          "49"
+        ]
+      },
+      "Tech Risk": {
+        "summary": "Mitigated cyber risk with ISO 27001:2022‑aligned framework; conducted regular incident response testing; delivered cybersecurity awareness training; assessed and monitored third‑party/vendor risk; maintained cyber insurance coverage.",
+        "pages": [
+          "33",
+          "115",
+          "195"
+        ]
+      },
+      "Platforms & Systems": {
+        "summary": "TEJAS Platform serves as a scalable digital ecosystem for data lake, command centre, and AI deployment across sinter, blast furnace, and coke oven; Project Drishti provides a Mine‑to‑Metal AI digital twin; JSW Vision.AI offers real‑time visual alerts and dashboards; Condition‑Based Monitoring Programme deploys 20,000 sensors; private 5G network underpins IIoT.",
+        "pages": [
+          "23",
+          "48",
+          "49",
+          "50",
+          "51",
+          "144",
+          "145"
+        ]
+      },
+      "Talent & Skills": {
+        "summary": "Delivered 37,730 training hours to 8,228 participants, completing 16,732 certifications; partnered with Steel University for Industry 4.0 learning ecosystem; launched Salesforce Training Academy with 31 certifications; conducted 12 focused sessions for 30 technical and 35 business trainees; collaborated with Harvard, Skillsoft, Coursera, and steelUniversity for advanced skilling.",
+        "pages": [
+          "23",
+          "50",
+          "95",
+          "100",
+          "192"
+        ]
+      }
+    },
+    "source_fingerprint": "9e396e9b258ac7233206d53246dcee27be36501c590cfea1640780300c8fef4c"
+  },
+  "jioplatforms": {
+    "company": "Jio Platforms Limited",
+    "model": "openai/gpt-oss-20b",
+    "parameters": {
+      "Current Technology Adoption": {
+        "summary": "Jio offers 524.4 million users a suite of apps via MyJio, including live TV, streaming, games, and education; its set‑top‑box averages >5 hours daily use. JioAICloud launched with up to 100 GB free storage, and JioBrain, a versatile ML platform, integrates across operations.",
+        "pages": [
+          "9",
+          "149",
+          "287",
+          "306"
+        ]
+      },
+      "Digital Transformation": {
+        "summary": "Jio launched JioAICloud and JioPC to make AI accessible, partnered with Reliance Intelligence and Google for 18 months of complimentary Google AI Pro access, and developed MyJio, Jio Set‑top‑box, and Jio TV+ platforms. It secured 144 patents in FY2023‑24 across 6G, 5G, AI, LLM, and Deep technologies and introduced products such as JioBharat, JioSpaceFiber, and JioTranslate.",
+        "pages": [
+          "5",
+          "7",
+          "150",
+          "285",
+          "303"
+        ]
+      },
+      "R&D": {
+        "summary": "Jio Platforms has filed 1,255 patents, granted 144 in FY2023‑24, totaling 331 by March 2024, and applied for 6,817 patents by March 31 2026 across 4G, 5G, 6G, and AI‑driven network automation. It built a full‑stack digital platform covering Entertainment, Commerce, Gaming, Agriculture, Education, and Healthcare, and completed the world’s fastest standalone 5G rollout in India.",
+        "pages": [
+          "11",
+          "25",
+          "31",
+          "166",
+          "172",
+          "285"
+        ]
+      },
+      "Emerging Technologies": {
+        "summary": "Jio developed an indigenous, cloud‑native 5G core platform supporting 4G, 5G, and fixed line services with network slicing, edge computing, AI automation, and zero‑touch provisioning. It pioneered a scalable Point‑to‑Multi‑Point Fixed Wireless Broadband with MU‑MIMO and dynamic beamforming, enabling service activation in <1 hour.",
+        "pages": [
+          "151",
+          "169"
+        ]
+      },
+      "Technology Partnerships": {
+        "summary": "Jio is a member of the Bharat 6G Alliance, created proprietary OSes (JioBharat OS, JioTele OS, JioReality OS), and entered a master distributor agreement with Reliance Retail for recharge vouchers. It provides managed IT, software, and OTT services to Reliance Industries and Reliance Jio Infocomm.",
+        "pages": [
+          "9",
+          "10",
+          "31",
+          "159",
+          "294"
+        ]
+      },
+      "Technology Investments": {
+        "summary": "Jio invests in AI‑driven network automation, predictive maintenance, and real‑time monitoring; extends connectivity via UBR and AirFiber to remote regions; achieves AA conformance for popular apps; revises network asset useful life to 18 years; and expands 5G network capacity.",
+        "pages": [
+          "31",
+          "32",
+          "170",
+          "191",
+          "307",
+          "372"
+        ]
+      },
+      "Cloud Adoption": {
+        "summary": "Jio launched JioPC, a cloud‑based scalable compute platform, and offers managed cloud services to enterprises. Its end‑to‑end 5G stack is cloud‑native, focusing on AI‑driven automation, and integrates cloud, OSS/BSS, and UBR capabilities for faster innovation.",
+        "pages": [
+          "10",
+          "29",
+          "31",
+          "32",
+          "153"
+        ]
+      },
+      "Automation": {
+        "summary": "Jio embeds AI across network operations for predictive maintenance, automated traffic management, dynamic resource allocation, and real‑time provisioning. JioBrain supports seamless integration across services, and AI is combined with robotics, cloud, IoT, and smart devices to improve business efficiency and reduce emissions.",
+        "pages": [
+          "31",
+          "156",
+          "169",
+          "307"
+        ]
+      },
+      "Cybersecurity": {
+        "summary": "Jio’s Information Security function, led by a CISO and overseen by the Board’s Risk Committee, holds ISO/IEC 27001 and ISO 27701 certifications. A SOC monitors infrastructure continuously, supported by penetration testing, vulnerability assessments, and a structured incident response framework.",
+        "pages": [
+          "32",
+          "172",
+          "307"
+        ]
+      },
+      "Future Technology Roadmaps": {
+        "summary": "Jio invests Rs 8,190 crore in technology platform development, focusing on AI services deployment at scale across India. It maintains a full stack of digital platforms for diverse consumer needs and leverages its True5G network and fixed wireless access to lead the 5G transformation and develop best‑in‑class products beyond India.",
+        "pages": [
+          "150",
+          "151",
+          "153",
+          "191",
+          "285",
+          "325"
+        ]
+      },
+      "Technology Pain Areas": {
+        "summary": "Jio mitigates vendor dependency by owning proprietary stacks, addresses skill shortages via skilling programs, reduces global supply chain reliance through indigenous tech, and invests in use‑case development across digital platforms. It enhances data privacy and security through a comprehensive strategy and dedicated Information Security function.",
+        "pages": [
+          "7",
+          "31",
+          "32",
+          "172",
+          "290",
+          "306"
+        ]
+      },
+      "AI": {
+        "summary": "Jio launched JioAICloud with 100 GB free storage, unveiled JioBrain for operations and skill development, partnered with AMD, Cisco, and Nokia on an Open Telecom AI Platform, and is building multi‑GW AI‑ready data centres. Its True5G network now accounts for 55% of wireless data traffic.",
+        "pages": [
+          "6",
+          "154",
+          "288",
+          "307"
+        ]
+      },
+      "Tech Risk": {
+        "summary": "Jio’s cybersecurity strategy aligns with ISO/IEC 27001 and ISO 27701, monitored by a SOC with penetration testing, and includes incident reporting with CERT‑In. A dedicated CISO‑led Information Security function manages data privacy and security risks under Board oversight.",
+        "pages": [
+          "29",
+          "32",
+          "168",
+          "172",
+          "285",
+          "290"
+        ]
+      },
+      "Platforms & Systems": {
+        "summary": "Jio’s proprietary AI platform integrates ML across telecom and cloud‑to‑edge for predictive maintenance and real‑time provisioning. Its vertically integrated stack includes cloud‑native 5G, OSS/BSS, core network, and UBR, while hardware and software are designed for devices like JioBharat phones and set‑top boxes with proprietary OSes. Enterprise services include Cloud, CPaaS, and IoT.",
+        "pages": [
+          "31",
+          "151",
+          "287"
+        ]
+      },
+      "Talent & Skills": {
+        "summary": "Jio operates 15 learning academies, delivering thousands of role‑based interventions, and trained lakhs of associates in future‑ready skills such as generative AI. It received BML Munjal and Brandon Hall Awards, launched the Saksham certification for supply chain staff, and uses Coursera and LinkedIn for continuous learning.",
+        "pages": [
+          "32",
+          "170",
+          "171",
+          "172",
+          "306"
+        ]
+      }
+    },
+    "source_fingerprint": "015eb732f4b04a4cd18afb1d6b933a7cd16c865fcadbda30ac3a26cb361e2ca7"
+  }
+}

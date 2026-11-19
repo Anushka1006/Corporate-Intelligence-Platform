@@ -1,0 +1,10 @@
+annual_reports
+.venv
+.env
+groq_key.txt
+__pycache__/
+*.pyc
+cell_cache/
+match_report_indexes/
+output/pipeline_notebooks/
+news_progress.json
