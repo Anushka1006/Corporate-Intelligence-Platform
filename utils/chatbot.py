@@ -153,14 +153,17 @@ _FIN_INTENT = [
 ]
 
 
-
-_NEWS_INTENT = [
-
-    r"\bnews\b", r"headline", r"announcement", r"press release", r"\bupdates?\b",
-
-    r"\bevents?\b", r"recent development", r"latest",
-
+_UNSUPPORTED_NEWS_INTENT = [
+    r"\bnews\b",
+    r"\bheadline[s]?\b",
+    r"\bannouncement[s]?\b",
+    r"\bpress\s+release[s]?\b",
+    r"\bupdates?\b",
+    r"\brecent\s+developments?\b",
+    r"\bpositive\s+(?:news|highlights?|developments?)\b",
+    r"\bnegative\s+(?:news|highlights?|developments?)\b",
 ]
+
 
 
 def _matches_any(text: str, patterns) -> bool:
@@ -175,15 +178,11 @@ def question_wants_technology(question: str) -> bool:
 
     fin = _matches_any(q, _FIN_INTENT)
 
-    news = _matches_any(q, _NEWS_INTENT)
-
-
-
     if tech:
 
         return True
 
-    return not fin and not news
+    return not fin
 
 
 def question_wants_financial(question: str) -> bool:
@@ -191,9 +190,8 @@ def question_wants_financial(question: str) -> bool:
     return _matches_any(str(question or "").lower(), _FIN_INTENT)
 
 
-def question_wants_news(question: str) -> bool:
-
-    return _matches_any(str(question or "").lower(), _NEWS_INTENT)
+def question_wants_unsupported_news(question: str) -> bool:
+    return _matches_any(str(question or "").lower(), _UNSUPPORTED_NEWS_INTENT)
 
 
 def question_wants_broad_technology_detail(question: str) -> bool:
@@ -418,7 +416,7 @@ def build_technology_section(
 
 # ============================================================
 
-# BUILD COMPANY CONTEXT (financials + news + technology evidence)
+# BUILD COMPANY CONTEXT (financials + technology evidence)
 
 # ============================================================
 
@@ -428,15 +426,11 @@ def build_context(
 
     company_row: pd.Series,
 
-    news_df: pd.DataFrame,
-
     kb: TechKnowledgeBase,
 
     question: str = "",
 
     registry: SourceRegistry | None = None,
-
-    max_news: int = 12,
 
     max_tech_points: int = 40,
 
@@ -444,23 +438,11 @@ def build_context(
 
     include_financial: bool = True,
 
-    include_news: bool = True,
-
 ) -> str:
 
 
 
     company_name = str(company_row.get("Company", "Unknown Company"))
-
-
-
-    # Recompute the key fresh from the company name every time, rather
-
-    # than trusting a stored Company_Key column (it can be stale or built
-
-    # with a different rule) - a wrong key silently drops all news.
-
-    company_key = compute_company_key(company_name)
 
 
 
@@ -510,90 +492,6 @@ def build_context(
 
     # --------------------------------------------------------
 
-    # NEWS - headline, date, sentiment, summary, source (unchanged)
-
-    # --------------------------------------------------------
-
-
-
-    news_lines = []
-
-
-
-    if news_df is not None and not news_df.empty and "Company" in news_df.columns:
-
-
-
-        company_news = news_df[
-
-            news_df["Company"].apply(compute_company_key) == company_key
-
-        ].copy()
-
-
-
-        if "Date" in company_news.columns:
-
-            company_news = company_news.sort_values("Date", ascending=False)
-
-
-
-        company_news = company_news.head(max_news)
-
-
-
-        for _, row in company_news.iterrows():
-
-
-
-            date_value = row.get("Date")
-
-            if pd.notna(date_value):
-
-                try:
-
-                    date_text = date_value.date()
-
-                except Exception:
-
-                    date_text = date_value
-
-            else:
-
-                date_text = "undated"
-
-
-
-            sentiment = row.get("Sentiment", "")
-
-            headline = row.get("Headline", "")
-
-            summary = row.get("Summary", "")
-
-            source = row.get("Source", "")
-
-
-
-            if not _is_empty(headline):
-
-                news_lines.append(
-
-                    f"- [{date_text}] ({sentiment}) {headline} "
-
-                    f"| Source: {source} | Summary: {summary}"
-
-                )
-
-
-
-    if not news_lines:
-
-        news_lines = ["No recent news on file."]
-
-
-
-    # --------------------------------------------------------
-
     # TECHNOLOGY - evidence points with [S#] ids and report pages
 
     # --------------------------------------------------------
@@ -607,12 +505,6 @@ def build_context(
     if include_financial:
 
         sections.append("=== COMPANY FINANCIAL DATA ===\n" + "\n".join(financials))
-
-
-
-    if include_news:
-
-        sections.append("=== RECENT NEWS DATA ===\n" + "\n".join(news_lines))
 
 
 
@@ -652,8 +544,6 @@ def build_multi_company_context(
 
     matched_companies: pd.DataFrame,
 
-    news_df: pd.DataFrame,
-
     kb: TechKnowledgeBase,
 
     question: str = "",
@@ -665,8 +555,6 @@ def build_multi_company_context(
     include_technology: bool = True,
 
     include_financial: bool = True,
-
-    include_news: bool = True,
 
 ) -> str:
 
@@ -684,31 +572,23 @@ def build_multi_company_context(
 
     per_company = max(4, min(100, budget // max(1, n)))
 
-    max_news = max(6, int(14 * scale))
-
-
-
     sections = []
 
     for index, (_, company_row) in enumerate(matched_companies.iterrows(), start=1):
 
         context = build_context(
 
-            company_row, news_df, kb,
+            company_row, kb,
 
             question=question,
 
             registry=registry,
-
-            max_news=max_news,
 
             max_tech_points=per_company,
 
             include_technology=include_technology,
 
             include_financial=include_financial,
-
-            include_news=include_news,
 
         )
 
@@ -808,9 +688,9 @@ def build_dataset_overview_context(company_df: pd.DataFrame, kb: TechKnowledgeBa
 
 SYSTEM_PROMPT = """You are the Corporate Intelligence Assistant for an NSE/BSE
 
-company research platform. You answer questions about company financials,
+company research platform. You answer questions about company financials
 
-recent news, and technology adoption using ONLY the data supplied below.
+and technology adoption using ONLY the data supplied below.
 
 
 
@@ -858,7 +738,7 @@ How to behave:
 
 3. Ground every financial figure and every factual claim in the supplied
 
-   data. Never invent numbers, technologies, vendors, dates, or news events
+   data. Never invent numbers, technologies, vendors, or dates
 
    that are not present in the data below.
 
@@ -890,7 +770,7 @@ How to behave:
 
 
 
-7. Give detailed, substantive answers across financial, news, and technology
+7. Give detailed, substantive answers across financial and technology
 
    questions; do not give a terse 1-2 sentence summary when the supplied data
 
@@ -916,9 +796,7 @@ How to behave:
 
    explain what they indicate, and include relevant comparisons or calculations
 
-   from supplied figures. For news questions, describe each relevant event and
-
-   its significance based only on the supplied headline and summary. Use
+   from supplied figures. Use
 
    headings, short paragraphs, or bullets for readability. For a direct
 
@@ -1003,9 +881,14 @@ TECHNOLOGY EVIDENCE - how to use it:
 
     appear in the data. Never write page numbers yourself and never put
 
-    [S#] tags on financial or news statements - the app converts the tags
-
+    [S#] tags on financial statements - the app converts the tags
     into the annual-report page numbers.
+
+    Do not add an "Evidence" column to answer tables. If a table is needed,
+    use only the information needed to answer the question. Put technology
+    citation IDs directly in the technology text, and do not leave blank
+    source or evidence cells. Financial figures must not use technology
+    citation tags.
 
 
 
@@ -1018,14 +901,6 @@ TECHNOLOGY EVIDENCE - how to use it:
     parameters where the evidence allows it.
 
 
-
-14. For news questions, do not tell the user to "see the sources below" -
-
-    actually describe what happened, using the headline and Summary text
-
-    supplied in RECENT NEWS DATA. The Sources panel the app shows afterwards
-
-    is only a citation list.
 
 """
 
@@ -1373,6 +1248,55 @@ def resolve_citations(
     return text, sources
 
 
+def remove_evidence_column(answer: str) -> str:
+    """Remove an Evidence/source column if the model adds one to a normal answer."""
+    lines = answer.splitlines()
+    output = []
+    i = 0
+
+    while i < len(lines):
+        if not lines[i].strip().startswith("|"):
+            output.append(lines[i])
+            i += 1
+            continue
+
+        table = []
+        while i < len(lines) and lines[i].strip().startswith("|"):
+            table.append(lines[i])
+            i += 1
+
+        if len(table) >= 2:
+            header_cells = [
+                cell.strip()
+                for cell in table[0].strip().strip("|").split("|")
+            ]
+            evidence_indexes = [
+                index for index, cell in enumerate(header_cells)
+                if re.search(r"(?i)^evidence(?:\s+(?:column|box|source))?$", cell)
+                or re.search(r"(?i)\bsource(?:s)?\b", cell)
+            ]
+
+            if evidence_indexes:
+                remove = set(evidence_indexes)
+                cleaned_table = []
+                for row in table:
+                    cells = [
+                        cell.strip()
+                        for cell in row.strip().strip("|").split("|")
+                    ]
+                    kept = [
+                        cell for index, cell in enumerate(cells)
+                        if index not in remove
+                    ]
+                    cleaned_table.append("| " + " | ".join(kept) + " |")
+                output.extend(cleaned_table)
+                continue
+
+        output.extend(table)
+
+    return "\n".join(output)
+
+
 
 
 
@@ -1586,7 +1510,7 @@ def _append_detailed_technology_evidence(
 
             lines.append(
 
-                f"| **{parameter}** | " + "\<br>".join(evidence) + " |"
+                f"| **{parameter}** | " + "<br>".join(evidence) + " |"
 
             )
 
@@ -1858,8 +1782,6 @@ def _answer_question_impl(
 
     company_df: pd.DataFrame,
 
-    news_df: pd.DataFrame,
-
     kb: TechKnowledgeBase,
 
     matched_companies: pd.DataFrame,
@@ -1868,28 +1790,22 @@ def _answer_question_impl(
 
 ) -> ChatAnswer:
 
-
-
     has_companies = matched_companies is not None and not matched_companies.empty
+    if question_wants_unsupported_news(question):
+        return ChatAnswer(
+            text="I can't provide that information. I can answer questions about "
+                 "company financials or technology adoption."
+        )
     explicit_technology = _matches_any(question.lower(), _TECH_INTENT)
     if (
         not has_companies
         and not question_wants_financial(question)
-        and not question_wants_news(question)
         and (explicit_technology or _global_technology_search_terms(question))
     ):
         return _search_technology_dataset(question, kb)
 
     include_technology = has_companies and question_wants_technology(question)
-    include_financial = question_wants_financial(question) or not (
-        explicit_technology or question_wants_news(question)
-    )
-
-    include_news = question_wants_news(question) or not (
-
-        explicit_technology or question_wants_financial(question)
-
-    )
+    include_financial = question_wants_financial(question) or not explicit_technology
 
 
 
@@ -1901,7 +1817,7 @@ def _answer_question_impl(
 
             context = build_multi_company_context(
 
-                company_df, matched_companies, news_df, kb,
+                company_df, matched_companies, kb,
 
                 question=question,
 
@@ -1912,8 +1828,6 @@ def _answer_question_impl(
                 include_technology=include_technology,
 
                 include_financial=include_financial,
-
-                include_news=include_news,
 
             )
 
@@ -2097,6 +2011,8 @@ def _answer_question_impl(
 
 
     text, sources = resolve_citations(raw_answer, registry, kb)
+    if not question_wants_detailed_technology_evidence(question):
+        text = remove_evidence_column(text)
 
 
 
@@ -2147,7 +2063,6 @@ _PAGE_LABEL = re.compile(
 def answer_question(
     question: str,
     company_df: pd.DataFrame,
-    news_df: pd.DataFrame,
     kb: TechKnowledgeBase,
     matched_companies: pd.DataFrame,
     history=None,
@@ -2156,7 +2071,7 @@ def answer_question(
     sources) unless SHOW_SOURCES is switched on."""
 
     result = _answer_question_impl(
-        question, company_df, news_df, kb, matched_companies, history=history
+        question, company_df, kb, matched_companies, history=history
     )
     if show_sources() or question_wants_detailed_technology_evidence(question):
         return result

@@ -265,5 +265,163 @@
       }
     },
     "source_fingerprint": "fa4dc60510eafef95fc17cd6226433a144d38618802afd31fac0ac006605ec69"
+  },
+  "asianpaints": {
+    "company": "Asian Paints Ltd.",
+    "model": "openai/gpt-oss-20b",
+    "parameters": {
+      "Current Technology Adoption": {
+        "summary": "Implemented AI‑driven invoice processing agents, Intelligent Document Processing, a Gen AI virtual assistant, instant employee reimbursements, and mobile‑enabled travel and expense platforms, achieving near‑zero vendor payment errors and improved transaction efficiency.",
+        "pages": [
+          "26",
+          "73",
+          "115"
+        ]
+      },
+      "Digital Transformation": {
+        "summary": "Shared Services Centre uses AI invoice agents and virtual assistants; AP Assure platform offers unified customer interface; Kavach program raises cyber awareness; AI Visualiser boosts customer engagement; 50:50 joint venture with PPG Group extends industrial coatings presence.",
+        "pages": [
+          "18",
+          "26",
+          "38",
+          "56",
+          "57",
+          "73",
+          "115"
+        ]
+      },
+      "R&D": {
+        "summary": "Spent Rs 121.7 crores FY 2025‑26 and Rs 122.8 crores FY 2024‑25 on R&D; focused on low‑VOC paints, lead/heavy metal reduction; developed 25 architectural and 61 industrial formulations; localised high‑end wood finish coatings under Make in India.",
+        "pages": [
+          "52",
+          "129",
+          "130",
+          "165"
+        ]
+      },
+      "Emerging Technologies": {
+        "summary": "Exploring IoT and Digital Twins for predictive protection; deploying AI Visualiser for predictive optimisation; investing in first‑mover digital tech; integrating VAE technology at pilot scale and new cement plants for backward integration.",
+        "pages": [
+          "26",
+          "38",
+          "52",
+          "56",
+          "93",
+          "115",
+          "129"
+        ]
+      },
+      "Technology Partnerships": {
+        "summary": "Invested in emerging digital tech for first‑mover advantage; established Shared Services Centre with AI invoice processing; continuously scout early‑stage tech; engaged in strategic partnerships to bridge product gaps; pursued tech alliances via Investment Committee.",
+        "pages": [
+          "38",
+          "52",
+          "115",
+          "142",
+          "165"
+        ]
+      },
+      "Technology Investments": {
+        "summary": "Spent ₹1,177.99 crores on tech CAPEX; in‑house R&T facility develops low‑VOC paints; invested ₹121.7 crores FY 2025‑26 and ₹122.8 crores FY 2024‑25 on R&T; built robust digital foundation with AI solutions for customer and partner experience; deployed digital visualisation, recommendation engines, voice bots, and automated onboarding.",
+        "pages": [
+          "19",
+          "26",
+          "57",
+          "107",
+          "110",
+          "165",
+          "284"
+        ]
+      },
+      "Cloud Adoption": {
+        "summary": "Not disclosed.",
+        "pages": [
+          "32",
+          "37",
+          "39",
+          "47",
+          "57",
+          "85"
+        ]
+      },
+      "Automation": {
+        "summary": "AI invoice agents and Intelligent Document Processing reduce manual work; AI virtual assistants improve query resolution; instant reimbursements cut turnaround; digitised workflows, system controls, and automated payment validations strengthen governance; TrailBlazer Programme scales early‑career engagement; structured alarm management improves safety monitoring.",
+        "pages": [
+          "26",
+          "57",
+          "85",
+          "93",
+          "115"
+        ]
+      },
+      "Cybersecurity": {
+        "summary": "Implemented data protection framework with DRM and DLP; conducted ransomware simulations and antivirus deployment; 24x7 Cybersecurity Operations Centre with global threat intelligence; annual maturity reviews; targeted zero breaches across units.",
+        "pages": [
+          "57",
+          "97"
+        ]
+      },
+      "Future Technology Roadmaps": {
+        "summary": "Leveraging AI and analytics to enhance customer experience and decision‑making; investing in emerging digital tech for first‑mover advantage and backward integration; deploying AI Visualiser for painting services; implementing AI invoice agents and virtual assistants; digitised workflows and automated validations for governance.",
+        "pages": [
+          "19",
+          "38",
+          "56",
+          "57",
+          "91",
+          "115"
+        ]
+      },
+      "Technology Pain Areas": {
+        "summary": "Commissioning delays due to design changes, rework, vendor delays, manpower constraints, and higher capex; vendor dependency monitored; on‑site safety team deployed; Raw Material Procurement Planning solution optimises costs; SAP RISE ERP platform supports transactions and reporting.",
+        "pages": [
+          "40",
+          "57",
+          "115"
+        ]
+      },
+      "AI": {
+        "summary": "AI invoice agents and Intelligent Document Processing improve efficiency; AI virtual assistant enhances query resolution; AI visualisation, recommendation engines, voice bots, and onboarding journeys boost customer experience; AI skilling for marketing professionals; risk management framework benchmarked to ISO 31000.",
+        "pages": [
+          "35",
+          "36",
+          "57",
+          "86",
+          "115"
+        ]
+      },
+      "Tech Risk": {
+        "summary": "Data protection includes classification, DRM, restricted sharing, and controlled external access; business continuity via disaster recovery and 'Kavach' awareness; AI usage governed through secure enterprise platforms; cybersecurity risks managed with Emergency Response Plan and Behaviour‑Based Safety; regular quantitative risk assessments close action plans.",
+        "pages": [
+          "35",
+          "36",
+          "38",
+          "39",
+          "40",
+          "142"
+        ]
+      },
+      "Platforms & Systems": {
+        "summary": "Uses SAP RISE for ERP; AP Assure platform integrates product systems for institutional stakeholders; Juggernaut initiative coordinates solution delivery; Total Assure offers system recommendations; Shared Services Centre employs AI invoice processing for touchless operations.",
+        "pages": [
+          "26",
+          "73",
+          "115",
+          "129"
+        ]
+      },
+      "Talent & Skills": {
+        "summary": "Implemented data protection framework with DRM and DLP; annual cybersecurity maturity reviews; training on Digital Personal Data Protection Act; functional academies for new incumbents; 'Kavach' program raises cyber and information security awareness.",
+        "pages": [
+          "57",
+          "85",
+          "97",
+          "129",
+          "164",
+          "169"
+        ]
+      }
+    },
+    "source_fingerprint": "2484c1c47a08cb55eed539e323a5940216721974f7f90e8ec664035593fbfe3d"
   }
 }

@@ -4,10 +4,9 @@ An end-to-end pipeline and Streamlit dashboard that, for the top ~600 NSE/BSE li
 
 1. Builds the company master list (NSE 100 + BSE 500)
 2. Extracts financial data and sector rankings
-3. Collects and analyses recent news
-4. Finds and downloads annual report PDFs
-5. Extracts 15 technology-adoption parameters from the reports using a RAG pipeline (Groq LLM)
-6. Serves everything in a dashboard with sector comparison and an AI assistant
+3. Finds and downloads annual report PDFs
+4. Extracts 15 technology-adoption parameters from the reports using a RAG pipeline (Groq LLM)
+5. Serves everything in a dashboard with sector comparison and an AI assistant
 
 ---
 
@@ -17,7 +16,6 @@ An end-to-end pipeline and Streamlit dashboard that, for the top ~600 NSE/BSE li
 - Internet access (NSE/BSE sites, Serper, Groq)
 - Optional but strongly recommended: NVIDIA GPU (~8 GB VRAM) for the notebook's embedding and reranker models. It falls back to CPU, which is much slower.
 - API keys:
-  - **Serper** (https://serper.dev) for news search
   - **Groq** (https://console.groq.com) for LLM extraction and the chatbot
 
 ---
@@ -132,11 +130,10 @@ Stages run in this order:
 |---|-------|--------|--------|
 | 1 | Company list | `fetcher.py` | `NSE_BSE_Top_600s_Companies.xlsx` (sheet `All Companies`) |
 | 2 | Financials | `financial.py` | `output/companies_final_financial_sector_ranked.xlsx` |
-| 3 | News | `news_intelligence.py` | `output/news_analysis.xlsx` |
-| 4 | Report URLs | `save_urls.py` | `output/Companies_urls.xlsx` |
-| 5 | PDF download | `download_urls.py` | `annual_reports/*.pdf` |
-| 6 | Technology matrix | notebook | `tech_matrix_output/NSE_BSE Companies.xlsx` (sheet `Tech Matrix`) |
-| 7 | Dashboard | `app.py` | opens in browser |
+| 3 | Report URLs | `save_urls.py` | `output/Companies_urls.xlsx` |
+| 4 | PDF download | `download_urls.py` | `annual_reports/*.pdf` |
+| 5 | Technology matrix | notebook | `tech_matrix_output/NSE_BSE Companies.xlsx` (sheet `Tech Matrix`) |
+| 6 | Dashboard | `app.py` | opens in browser |
 
 An executed copy of the notebook is saved to `output/pipeline_notebooks/`.
 
@@ -147,7 +144,6 @@ At the top of `master_pipeline.py`, set any finished stage to `False`:
 ```python
 RUN_COMPANY_GENERATION = True
 RUN_FINANCIAL = True
-RUN_NEWS = True
 RUN_URL_EXTRACTION = True
 RUN_PDF_DOWNLOAD = True
 RUN_TECHNOLOGY = True
@@ -161,7 +157,6 @@ If you set `RUN_COMPANY_GENERATION = False`, the company workbook must already h
 ```bash
 python fetcher.py              # company list
 python financial.py            # financial data
-python news_intelligence.py    # news (needs SERPER_API_KEY)
 python save_urls.py            # annual report URLs
 python download_urls.py        # download PDFs
 ```
@@ -213,7 +208,6 @@ Open http://localhost:8501. The sidebar has three pages:
 The dashboard reads these files, so run the pipeline (or restore them) first:
 
 - `output/companies_final_financial_sector_ranked.xlsx`
-- `output/news_analysis.xlsx`
 - `tech_matrix_output/NSE_BSE Companies.xlsx`
 
 ---
@@ -222,7 +216,6 @@ The dashboard reads these files, so run the pipeline (or restore them) first:
 
 | Problem | Fix |
 |---------|-----|
-| `SERPER_API_KEY is missing` | Add it to `.env` in the project root. |
 | `GROQ_API_KEY is not set` | Add it to `.env` and put it in `groq_key.txt`. |
 | `ModuleNotFoundError` | Activate `.venv` and re-run `pip install -r requirements.txt`. |
 | Playwright / browser errors in `save_urls.py` | Run `playwright install chromium`. |

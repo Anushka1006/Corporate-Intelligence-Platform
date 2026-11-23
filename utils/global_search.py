@@ -8,7 +8,6 @@ from utils.chatbot import (
     get_client,
     get_model,
     question_wants_financial,
-    question_wants_news,
 )
 from utils.company_keys import compute_company_key, normalize_text, strip_company_suffix
 from utils.tech_knowledge import TechKnowledgeBase
@@ -18,18 +17,17 @@ from utils.tech_knowledge import TechKnowledgeBase
 # ------------------------------------------------------------
 
 OFF_TOPIC_MESSAGE = (
-    "I can't help with that one. I can answer questions about **technology**, "
-    "**news** and **financials** of the listed companies, for example:\n\n"
+    "I can't help with that one. I can answer questions about **technology and "
+    "financials** of the listed companies, for example:\n\n"
     "- *Which companies mention SAP?*\n"
     "- *Compare SAP and Oracle across companies*\n"
-    "- *Latest news on Infosys*\n"
     "- *Compare TCS and Infosys revenue*"
 )
 
 NEED_COMPANY_MESSAGE = (
-    "Financial and news answers are company-specific. Please mention a company "
+    "Financial answers are company-specific. Please mention a company "
     "name, NSE symbol or sector, for example *'Infosys revenue and EBITDA "
-    "margin'* or *'Healthcare sector leader news'*.\n\n"
+    "margin'* or *'Healthcare sector leader'*.\n\n"
     "For technology you can ask without a company, e.g. *'Which companies "
     "mention SAP?'*"
 )
@@ -184,7 +182,7 @@ def vendor_mention_only(question: str, explicit_companies: pd.DataFrame, detect_
     q = " ".join(str(question or "").split())
     if not _extract_rule_groups(q):
         return False
-    if question_wants_financial(q) or question_wants_news(q):
+    if question_wants_financial(q):
         return False
 
     nq = normalize_text(q)
@@ -255,11 +253,11 @@ def kb_only_company_rows(question: str, kb: TechKnowledgeBase, company_df: pd.Da
 
 _ROUTER_PROMPT = """You route questions for a corporate-intelligence assistant
 covering about 450 listed Indian companies. The assistant has three kinds of
-data: annual-report TECHNOLOGY evidence, company FINANCIALS, and company NEWS.
+data: annual-report TECHNOLOGY evidence and company FINANCIALS.
 
 Reply with ONE JSON object and nothing else:
 {
- "intent": "technology_search" | "financial_or_news" | "off_topic",
+ "intent": "technology_search" | "financial" | "off_topic",
  "mode": "all" | "any" | "compare",
  "sector": null or one of: __SECTORS__,
  "groups": [ {"label": "short name", "any_of": ["exact word or phrase", "..."]} ]
@@ -268,12 +266,11 @@ Reply with ONE JSON object and nothing else:
 Definitions
 - off_topic: greetings, personal statements ("I am a girl", "I am hungry"),
   chit-chat, general knowledge, coding help, anything that is not about
-  companies' technology, news or financials. Words such as "girl" or "boy" in a
+  companies' technology or financials. Words such as "girl" or "boy" in a
   personal statement are NOT technology topics.
 - technology_search: asks which companies use / mention / plan / adopt /
   invest in a technology, vendor, product, system or capability.
-- financial_or_news: asks about revenue, profit, ratios, rankings, news or
-  announcements without naming a company.
+- financial: asks about revenue, profit, ratios, rankings or
 Rules for "groups" (technology_search only)
 - One group per concept the user wants. "any_of" lists the exact words,
   product names, abbreviations and synonyms that would literally appear in an
@@ -282,7 +279,7 @@ Rules for "groups" (technology_search only)
   mode "compare": the user compares the groups against each other.
 - Use "sector" only if the user restricts to an industry (banks -> Financial
   Services, pharma -> Healthcare). Otherwise null.
-- Max 4 groups. For off_topic or financial_or_news use "groups": [].
+- Max 4 groups. For off_topic or financial use "groups": [].
 """
 
 
@@ -321,7 +318,7 @@ def _llm_route(question: str, sectors: list[str]) -> dict | None:
         return None
 
     intent = str(data.get("intent", "")).strip().lower()
-    if intent not in {"technology_search", "financial_or_news", "off_topic"}:
+    if intent not in {"technology_search", "financial", "off_topic"}:
         return None
     mode = str(data.get("mode", "all")).strip().lower()
     if mode not in {"all", "any", "compare"}:
@@ -595,6 +592,18 @@ def answer_global_question(
     q = " ".join(str(question or "").split())
     if not q:
         return ChatAnswer(text="Please enter a question.")
+    if re.search(
+        r"\bnews\b|\bheadline[s]?\b|\bannouncement[s]?\b|"
+        r"\bpress\s+release[s]?\b|\bupdates?\b|\brecent\s+developments?\b|"
+        r"\bpositive\s+(?:news|highlights?|developments?)\b|"
+        r"\bnegative\s+(?:news|highlights?|developments?)\b",
+        q,
+        re.I,
+    ):
+        return ChatAnswer(
+            text="I can't provide that information. I can answer questions about "
+                 "company financials or technology adoption."
+        )
     if kb is None or not kb.profiles:
         return ChatAnswer(text="No technology evidence is loaded, so I can't search across companies.")
 
@@ -628,8 +637,8 @@ def answer_global_question(
                     sector_scope = [route["sector"]]
         return _run_search(groups, mode, kb, company_df, sector_scope)
 
-    # ---- 2. financial / news without any company --------------------------
-    if question_wants_financial(q) or question_wants_news(q):
+    # ---- 2. financial without any company ---------------------------------
+    if question_wants_financial(q):
         if sector_names:
             return None
         return ChatAnswer(text=NEED_COMPANY_MESSAGE)
@@ -639,7 +648,7 @@ def answer_global_question(
     if route:
         if route["intent"] == "off_topic":
             return ChatAnswer(text=OFF_TOPIC_MESSAGE)
-        if route["intent"] == "financial_or_news":
+        if route["intent"] == "financial":
             return None if sector_names else ChatAnswer(text=NEED_COMPANY_MESSAGE)
         if route["groups"]:
             sector_scope = sector_names or ([route["sector"]] if route["sector"] else [])

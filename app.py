@@ -20,7 +20,6 @@ st.set_page_config(
 
 from utils.data_loader import (
     load_company_master,
-    load_news,
     load_technology,
     load_tech_knowledge,
     get_sectors,
@@ -540,15 +539,6 @@ def financial_results_table(company_df: pd.DataFrame) -> pd.DataFrame:
     return result
 
 
-def company_news(df, company_name):
-    """Return news records matching the selected company."""
-    if df.empty or "Company_Key" not in df.columns:
-        return df.iloc[0:0].copy()
-
-    key = compute_company_key(company_name)
-    return df[df["Company_Key"].astype(str).eq(key)].copy()
-
-
 # ---------------------------------------------------------
 # SUMMARY-ONLY TECHNOLOGY DATA
 # ---------------------------------------------------------
@@ -577,7 +567,6 @@ def load_summary_technology_points(knowledge_base) -> dict:
 
 try:
     financial = load_company_master()
-    news = load_news()
     tech_summary, tech_detail = load_technology()
     kb = load_tech_knowledge()
     summary_technology = load_summary_technology_points(kb)
@@ -596,7 +585,7 @@ except Exception as error:
 st.title("Corporate Intelligence Dashboard")
 st.caption(
     "NSE / BSE • Financial Intelligence • "
-    "News Intelligence • Technology Intelligence"
+    "Technology Intelligence"
 )
 
 
@@ -628,7 +617,6 @@ with st.sidebar:
     st.divider()
     st.subheader("Data Coverage")
     st.metric("Financial Data Companies", f"{len(financial):,}")
-    st.metric("News Records", f"{len(news):,}")
     st.metric("Technology Profiles", f"{len(kb.profiles):,}")
 
 
@@ -1292,47 +1280,3 @@ else:
             ):
                 st.write(", ".join(missing_parameters))
 
-
-# ---------------------------------------------------------
-# NEWS INTELLIGENCE
-# ---------------------------------------------------------
-
-st.divider()
-st.header("News Intelligence")
-
-company_news_df = company_news(news, selected_name)
-
-if company_news_df.empty:
-    st.info(
-        "No matching news rows were found for this company in news_analysis.xlsx."
-    )
-else:
-    if "Date" in company_news_df.columns:
-        company_news_df = company_news_df.sort_values(
-            "Date",
-            ascending=False,
-            na_position="last",
-        )
-
-    display_cols = [
-        column
-        for column in [
-            "Date",
-            "Company",
-            "Headline",
-            "Summary",
-            "Sentiment",
-            "Source",
-            "Reason",
-        ]
-        if column in company_news_df.columns
-    ]
-
-    st.caption(
-        f"{len(company_news_df)} news records from the supplied workbook."
-    )
-    st.dataframe(
-        company_news_df[display_cols],
-        use_container_width=True,
-        hide_index=True,
-    )

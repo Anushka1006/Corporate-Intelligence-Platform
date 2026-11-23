@@ -40,15 +40,6 @@ FINANCIAL_FILE = (
 
 
 # ------------------------------------------------------------
-# NEWS EXTRACTION
-# ------------------------------------------------------------
-
-NEWS_FILE = (
-    BASE_DIR / "output" / "news_analysis.xlsx"
-)
-
-
-# ------------------------------------------------------------
 # ANNUAL REPORT URLS
 # ------------------------------------------------------------
 
@@ -387,72 +378,7 @@ def run_financial_extraction():
 
 
 # ============================================================
-# 6. COMPANY NEWS EXTRACTION
-# ============================================================
-
-def run_news_extraction():
-
-    print_header(
-        "COMPANY NEWS EXTRACTION"
-    )
-
-    if not RUN_NEWS:
-
-        print("[SKIPPED] News extraction disabled.")
-
-        require_file(
-            NEWS_FILE,
-            "Existing news workbook"
-        )
-
-        return
-
-    run_python_script(
-        "news_intelligence.py"
-    )
-
-    require_file(
-        NEWS_FILE,
-        "News extraction"
-    )
-
-    df = load_excel(
-        NEWS_FILE
-    )
-
-    print("\nNews extraction summary:")
-    print("News records:", len(df))
-
-    company_col = next(
-        (
-            col for col in [
-                "Company",
-                "Company Name",
-                "Company_Name"
-            ]
-            if col in df.columns
-        ),
-        None
-    )
-
-    if company_col:
-
-        unique_count = (
-            df[company_col]
-            .astype(str)
-            .str.strip()
-            .replace("", None)
-            .nunique()
-        )
-
-        print(
-            "Unique companies with news:",
-            unique_count
-        )
-
-
-# ============================================================
-# 7. ANNUAL REPORT URL EXTRACTION
+# 6. ANNUAL REPORT URL EXTRACTION
 # ============================================================
 
 def run_url_extraction():
@@ -521,7 +447,7 @@ def run_url_extraction():
 
 
 # ============================================================
-# 8. DOWNLOAD ANNUAL REPORTS
+# 7. DOWNLOAD ANNUAL REPORTS
 # ============================================================
 
 def run_pdf_downloader():
@@ -567,7 +493,7 @@ def run_pdf_downloader():
 
 
 # ============================================================
-# 9. TECHNOLOGY EXTRACTION NOTEBOOK
+# 8. TECHNOLOGY EXTRACTION NOTEBOOK
 # ============================================================
 
 def run_technology_extraction():
@@ -764,7 +690,7 @@ def run_technology_extraction():
 
 
 # ============================================================
-# 10. FINAL DATASET VALIDATION
+# 9. FINAL DATASET VALIDATION
 # ============================================================
 
 def validate_final_outputs():
@@ -776,7 +702,6 @@ def validate_final_outputs():
     files = {
         "600-company master": COMPANY_FILE,
         "Financial data": FINANCIAL_FILE,
-        "News data": NEWS_FILE,
         "Annual-report URLs": URL_FILE,
         "Technology data": TECH_FILE,
     }
@@ -802,7 +727,7 @@ def validate_final_outputs():
 
 
 # ============================================================
-# 11. LAUNCH STREAMLIT DASHBOARD
+# 10. LAUNCH STREAMLIT DASHBOARD
 # ============================================================
 
 def launch_dashboard():
@@ -842,7 +767,7 @@ def launch_dashboard():
 
 
 # ============================================================
-# 12. MAIN PIPELINE
+# 11. MAIN PIPELINE
 # ============================================================
 
 def main():
@@ -896,32 +821,27 @@ def main():
 
         run_financial_extraction()
 
-        # ----------------------------------------------------
-        # STEP 4: NEWS EXTRACTION
-        # ----------------------------------------------------
-
-        run_news_extraction()
 
         # ----------------------------------------------------
-        # STEP 5: ANNUAL REPORT URL EXTRACTION
+        # STEP 4: ANNUAL REPORT URL EXTRACTION
         # ----------------------------------------------------
 
         run_url_extraction()
 
         # ----------------------------------------------------
-        # STEP 6: DOWNLOAD ANNUAL REPORT PDFs
+        # STEP 5: DOWNLOAD ANNUAL REPORT PDFs
         # ----------------------------------------------------
 
         run_pdf_downloader()
 
         # ----------------------------------------------------
-        # STEP 7: TECHNOLOGY EXTRACTION
+        # STEP 6: TECHNOLOGY EXTRACTION
         # ----------------------------------------------------
 
         run_technology_extraction()
 
         # ----------------------------------------------------
-        # STEP 8: FINAL DATASET VALIDATION
+        # STEP 7: FINAL DATASET VALIDATION
         # ----------------------------------------------------
 
         validate_final_outputs()
@@ -950,7 +870,7 @@ def main():
         )
 
         # ----------------------------------------------------
-        # STEP 9: LAUNCH DASHBOARD
+        # STEP 8: LAUNCH DASHBOARD
         # ----------------------------------------------------
 
         if RUN_DASHBOARD:
@@ -979,10 +899,6 @@ def main():
 
         raise
 
-
-# ============================================================
-# 13. RUN PIPELINE
-# ============================================================
 
 if __name__ == "__main__":
 
