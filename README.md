@@ -69,7 +69,6 @@ python -m ipykernel install --user --name python3
 Create a file named `.env` in the project root:
 
 ```env
-SERPER_API_KEY=your_serper_key
 GROQ_API_KEY=your_groq_key
 
 # Optional (dashboard chatbot)
